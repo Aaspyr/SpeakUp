@@ -32,4 +32,11 @@ app.use("/api/v1/cards", cardsRouter);
 app.use("/api/v1/users", usersRouter);
 app.use("/api/v1/categories", categoriesRouter);
 
+app.all("*", (req, res, next) => {
+  res.status(400).json({
+    status: "404 Not Found",
+    message: `Cannot find ${req.originalUrl} on this server`,
+  });
+});
+
 module.exports = app;
