@@ -16,6 +16,7 @@ router.patch(
 );
 
 //User editing routes
+router.get("/me", authController.protect, usersController.updateMe);
 router.patch("/updateMe", authController.protect, usersController.updateMe);
 router.delete("/deleteMe", authController.protect, usersController.deleteMe);
 
