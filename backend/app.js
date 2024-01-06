@@ -3,7 +3,8 @@ const morgan = require("morgan");
 const cardsRouter = require("./routes/cardsRoutes");
 const usersRouter = require("./routes/usersRoutes");
 const categoriesRouter = require("./routes/categoriesRoutes");
-
+const AppError = require("./utils/appError");
+const errorHandler = require("./controllers/errorController");
 const app = express();
 
 //I MIDDLEWARES
@@ -33,10 +34,9 @@ app.use("/api/v1/users", usersRouter);
 app.use("/api/v1/categories", categoriesRouter);
 
 app.all("*", (req, res, next) => {
-  res.status(400).json({
-    status: "404 Not Found",
-    message: `Cannot find ${req.originalUrl} on this server`,
-  });
+  next(new AppError(`Cannot find ${req.originalUrl} on this server`, 404));
 });
+
+app.use(errorHandler);
 
 module.exports = app;
