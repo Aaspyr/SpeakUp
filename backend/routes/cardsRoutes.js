@@ -12,6 +12,10 @@ router
   .route("/:id")
   .get(authController.protect, cardsController.getCard)
   .patch(cardsController.updateCard)
-  .delete(cardsController.deleteCard);
+  .delete(
+    authController.protect,
+    authController.restrictTo("admin"),
+    cardsController.deleteCard
+  );
 
 module.exports = router;
