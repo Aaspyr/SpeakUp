@@ -4,6 +4,7 @@ const authController = require("./../controllers/authController");
 
 const router = express.Router();
 
+//Authentication routes
 router.post("/signup", authController.signup);
 router.post("/login", authController.login);
 router.post("/forgotPassword", authController.forgotPassword);
@@ -14,8 +15,11 @@ router.patch(
   authController.updatePassword
 );
 
+//User editing routes
 router.patch("/updateMe", authController.protect, usersController.updateMe);
+router.delete("/deleteMe", authController.protect, usersController.deleteMe);
 
+//Basic routes
 router
   .route("/")
   .get(usersController.getAllUsers)

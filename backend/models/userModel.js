@@ -83,6 +83,13 @@ userSchema.pre("save", function (next) {
   next();
 });
 
+//to not show disactive users
+userSchema.pre(/^find/, function (next) {
+  //this points to the current query
+  this.find({ active: { $ne: false } });
+  next();
+});
+
 //compare and validate password
 userSchema.methods.correctPassword = async function (
   candidatePassword,
