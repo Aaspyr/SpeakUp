@@ -8,6 +8,7 @@ router
   .route("/")
   .get(authController.protect, cardsController.getAllCards)
   .post(cardsController.createCard);
+
 router
   .route("/:id")
   .get(authController.protect, cardsController.getCard)
