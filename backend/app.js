@@ -28,6 +28,15 @@ app.use((req, res, next) => {
   );
   next();
 });
+
+//Test middlewate
+app.use((req, res, next) => {
+  req.requestTime = new Date().toISOString();
+  //console.log(req.headers);
+
+  next();
+});
+
 //III ROUTES
 app.use("/api/v1/cards", cardsRouter);
 app.use("/api/v1/users", usersRouter);

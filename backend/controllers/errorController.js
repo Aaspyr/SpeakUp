@@ -1,13 +1,9 @@
 const AppError = require("../utils/appError");
 
-const sendErrorDevelopment = (err, res) => {
-  res.status(err.statusCode).json({
-    status: err.status,
-    error: err,
-    message: err.message,
-    stack: err.stack,
-  });
-};
+const handleJWTError = () => new AppError("Invalid token, please login again");
+
+const handleJWTExpiredErrorDB = () =>
+  new AppError("Your token has expired, please login again");
 
 const handleCastErrorDB = (err) => {
   const message = `Invalid ${err.path}: ${err.value}`;
@@ -24,6 +20,15 @@ const handleValidationErrorDB = (err) => {
   const errorsarray = Object.values(err.errors).map((el) => el.message);
   const message = `Validation error. ${errorsarray.join(", ")}`;
   return new AppError(message, 400);
+};
+
+const sendErrorDevelopment = (err, res) => {
+  res.status(err.statusCode).json({
+    status: err.status,
+    error: err,
+    message: err.message,
+    stack: err.stack,
+  });
 };
 
 const sendErrorProduction = (err, res) => {
@@ -54,7 +59,8 @@ module.exports = (err, req, res, next) => {
 
     if (error.name === "ValidationError")
       error = handleValidationErrorDB(error);
-
+    if (error.name === "JsonWebTokenError") error = handleJWTError();
     sendErrorProduction(error, res);
+    if (error.name === "TokenExpiredError") error = handleJWTExpiredErrorDB();
   }
 };
