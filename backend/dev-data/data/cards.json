@@ -1,0 +1,57 @@
+[
+  {
+    "name": "bread",
+    "imageCard": "icons8-bread-48.png",
+    "category": "bakery",
+    "favourites": false,
+    "descryption": "Bread obtained by baking dough, which is a homogeneous combination of flour and water",
+    "cardsCollection": "food",
+    "imageCollection": "icons8-category-food-48.png"
+  },
+  {
+    "name": "baguette",
+    "imageCard": "icons8-baguette-48.png",
+    "category": "bakery",
+    "favourites": false,
+    "descryption": "Baguette obtained by baking dough, which is a homogeneous combination of flour and water",
+    "cardsCollection": "food",
+    "imageCollection": "icons8-category-food-48.png"
+  },
+  {
+    "name": "naan",
+    "imageCard": "icons8-naan-48.png",
+    "category": "bakery",
+    "favourites": false,
+    "descryption": "Leavened, oven-baked (usually using a tandoor) or tawa-fried flatbread, which is found in the cuisines mainly of Afghanistan",
+    "cardsCollection": "food",
+    "imageCollection": "icons8-category-food-48.png"
+  },
+  {
+    "name": "pretzel",
+    "imageCard": "icons8-pretzel-48.png",
+    "category": "bakery",
+    "favourites": false,
+    "descryption": "Type of baked pastry made from dough that is commonly shaped into a knot",
+    "cardsCollection": "food",
+    "imageCollection": "icons8-category-food-48.png"
+  },
+  {
+    "name": "toast bread",
+    "imageCard": "icons8-sliced-bread-48.png",
+    "category": "bakery",
+    "favourites": true,
+    "descryption": "Type of sliced bread",
+    "cardsCollection": "food",
+    "imageCollection": "icons8-category-food-48.png"
+  },
+
+  {
+    "name": "lemon soda",
+    "imageCard": "icons8-sliced-bread-48.png",
+    "category": "bakery",
+    "favourites": true,
+    "descryption": "Type of sliced bread",
+    "cardsCollection": "drink",
+    "imageCollection": "icons8-drink-48.png"
+  }
+]
