@@ -10,7 +10,7 @@ const Img = styled.img`
   width: auto;
 `;
 
-function HomepageLogo() {
+function Logo() {
   return (
     <StyledLogo>
       <Img src="/speakup-logo-white.png" alt="Logo" />
@@ -18,4 +18,4 @@ function HomepageLogo() {
   );
 }
 
-export default HomepageLogo;
+export default Logo;

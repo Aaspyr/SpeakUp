@@ -1,49 +1,27 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import axios from "axios";
+// import React from "react";
+// import { Link } from "react-router-dom";
+// import axios from "axios";
+import styled from "styled-components";
+import LoginForm from "../features/LoginForm";
+import HomepageLogo from "../ui/HomepageLogo";
+import Heading from "../ui/Heading";
+
+const LoginLayout = styled.main`
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 48rem;
+  align-content: center;
+  justify-content: center;
+  gap: 3.2 rem;
+  background-color: var(--color-brand-1000);
+`;
 function Login() {
-
-  const (email, setEmail) = useState("")
-  const (password, setPassword) = useState("")
-
-async function submit(e){
-  e.preventDefault()
-  try{
-await axios.post("http://127.0.0.1:3000/api/v1/users/login",{email, password})
-  }catch(e){
-console.log(e)
-  }
-}
-
   return (
-    <div>
-      <h1>Login</h1>
-      <form action="POST">
-        <input
-          type="email"
-          onChange={(e) => {
-            setEmail(e.target.value);
-          }}
-          placeholder="Email"
-          name=""
-          id=""
-        />
-        <input
-          type="password"
-          onChange={(e) => {
-            setEmail(e.target.value);
-          }}
-          placeholder="Password"
-          name=""
-          id=""
-        />
-        <input type="submit" />
-      </form>
-      <br />
-      <p>OR</p>
-      <br />
-      <Link to="/signup">SignUp</Link>
-    </div>
+    <LoginLayout>
+      <HomepageLogo />
+      <Heading as="h4">Log in to your account</Heading>
+      <LoginForm />
+    </LoginLayout>
   );
 }
 
