@@ -6,17 +6,13 @@ const router = express.Router();
 
 router
   .route("/")
-  .get(authController.protect, cardsController.getAllCards)
+  .get(cardsController.getAllCards)
   .post(cardsController.createCard);
 
 router
   .route("/:id")
-  .get(authController.protect, cardsController.getCard)
+  .get(cardsController.getCard)
   .patch(cardsController.updateCard)
-  .delete(
-    authController.protect,
-    authController.restrictTo("admin"),
-    cardsController.deleteCard
-  );
+  .delete(authController.restrictTo("admin"), cardsController.deleteCard);
 
 module.exports = router;
