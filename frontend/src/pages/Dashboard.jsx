@@ -49,6 +49,17 @@ function Dashboard() {
     fetchCards();
   }, [selectedCategories]);
 
+  const handleSpeakText = useCallback(() => {
+    const words = sentence.join(" ").split(" ");
+    words.forEach((word, index) => {
+      setTimeout(() => {
+        const utterance = new SpeechSynthesisUtterance(word);
+        utterance.rate = 0.5;
+        speechSynthesis.speak(utterance);
+      }, index * 1000);
+    });
+  }, [sentence]);
+
   return (
     <StyledDashboardLayout>
       <StyledCategories>
