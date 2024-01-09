@@ -33,7 +33,6 @@ const cardsSchema = new mongoose.Schema({
   },
   imageCollection: {
     type: String,
-    required: [true, "A card must have a image"],
   },
   cteatedAt: {
     type: Date,

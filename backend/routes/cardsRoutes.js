@@ -13,6 +13,6 @@ router
   .route("/:id")
   .get(cardsController.getCard)
   .patch(cardsController.updateCard)
-  .delete(authController.restrictTo("admin"), cardsController.deleteCard);
+  .delete(cardsController.deleteCard);
 
 module.exports = router;
