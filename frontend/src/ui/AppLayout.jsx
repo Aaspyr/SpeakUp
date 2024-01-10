@@ -11,7 +11,11 @@ const StyledAppLayout = styled.div`
 `;
 
 const Main = styled.main`
-  background-color: var(--color-brand-100);
+  background-image: linear-gradient(
+    110.1deg,
+    rgba(60, 58, 115, 1) 50%,
+    rgba(198, 55, 160, 1) 138.2%
+  );
   grid-column: 1/-1;
   padding: 4rem 4.8rem 6.4 rem;
 `;

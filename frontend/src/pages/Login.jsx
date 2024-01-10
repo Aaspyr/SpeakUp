@@ -13,7 +13,11 @@ const LoginLayout = styled.main`
   align-content: center;
   justify-content: center;
   gap: 3.2 rem;
-  background-color: var(--color-brand-1000);
+  background-image: linear-gradient(
+    110.1deg,
+    rgba(60, 58, 115, 1) 50%,
+    rgba(198, 55, 160, 1) 138.2%
+  );
 `;
 function Login() {
   return (
