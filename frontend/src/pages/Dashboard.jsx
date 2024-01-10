@@ -2,9 +2,14 @@
 
 import styled from "styled-components";
 import { useEffect, useState, useCallback } from "react";
-import { FaPlus, FaTrash } from "react-icons/fa";
 import CategorySelector from "./CategorySelector/CategorySelection.jsx";
 import AddCard from "../features/AddCard.jsx";
+import {
+  HiOutlineBackspace,
+  HiOutlineChatBubbleOvalLeftEllipsis,
+  HiOutlineTrash,
+  HiOutlinePlus,
+} from "react-icons/hi2";
 
 function Dashboard() {
   const [cards, setCards] = useState([]);
@@ -104,7 +109,7 @@ function Dashboard() {
       setTimeout(() => {
         const utterance = new SpeechSynthesisUtterance(word);
         utterance.rate = 1;
-        utterance.pitch = 2;
+        utterance.lang = "en";
         speechSynthesis.speak(utterance);
       }, index * 1000);
     });
@@ -148,20 +153,20 @@ function Dashboard() {
             />
             <div>
               <StyledButton onClick={handleShowAddForm}>
-                <FaPlus />
+                <HiOutlinePlus />
               </StyledButton>
               <div>{isShown ? <AddCard /> : null}</div>
             </div>
 
             <StyledButton onClick={handleDeleteCards}>
-              <FaTrash />
+              <HiOutlineTrash />
             </StyledButton>
           </EditContainer>
           <ClearSentenceButton onClick={() => setSentence([])}>
-            Clear Sentence
+            <HiOutlineBackspace />
           </ClearSentenceButton>
           <ReadSentenceButton onClick={handleSpeakText}>
-            Read Sentence
+            <HiOutlineChatBubbleOvalLeftEllipsis />
           </ReadSentenceButton>
         </StyledSidebar>
       </StyledMainContent>
@@ -172,13 +177,16 @@ function Dashboard() {
 export default Dashboard;
 
 const StyledContainer = styled.div`
+  margin-top: 20px;
+  margin-right: 50px;
+  margin-bottom: 20px;
   display: flex;
   flex-direction: column;
 `;
 
 const StyledMainContent = styled.div`
   display: grid;
-  grid-template-columns: 75% 25%;
+  grid-template-columns: 90% 10%;
   gap: 1rem;
 `;
 
