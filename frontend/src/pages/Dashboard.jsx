@@ -10,6 +10,7 @@ import {
   HiOutlineTrash,
   HiOutlinePlus,
 } from "react-icons/hi2";
+import Button from "../ui/Button.jsx";
 
 function Dashboard() {
   const [cards, setCards] = useState([]);
@@ -151,23 +152,22 @@ function Dashboard() {
               onChange={toggleEditMode}
               checked={editMode}
             />
+            <StyledButton onClick={handleDeleteCards}>
+              <HiOutlineTrash />
+            </StyledButton>
             <div>
               <StyledButton onClick={handleShowAddForm}>
                 <HiOutlinePlus />
               </StyledButton>
               <div>{isShown ? <AddCard /> : null}</div>
             </div>
-
-            <StyledButton onClick={handleDeleteCards}>
-              <HiOutlineTrash />
+            <StyledButton onClick={() => setSentence([])}>
+              <HiOutlineBackspace />
+            </StyledButton>
+            <StyledButton onClick={handleSpeakText}>
+              <HiOutlineChatBubbleOvalLeftEllipsis />
             </StyledButton>
           </EditContainer>
-          <ClearSentenceButton onClick={() => setSentence([])}>
-            <HiOutlineBackspace />
-          </ClearSentenceButton>
-          <ReadSentenceButton onClick={handleSpeakText}>
-            <HiOutlineChatBubbleOvalLeftEllipsis />
-          </ReadSentenceButton>
         </StyledSidebar>
       </StyledMainContent>
     </StyledContainer>
@@ -197,7 +197,10 @@ const StyledDashboardLayout = styled.div`
 `;
 
 const EditContainer = styled.section`
-  margin-top: 40%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 50px;
 `;
 
 const StyledCategories = styled.div`
@@ -217,17 +220,6 @@ const StyledPhraseContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
-`;
-
-const ClearSentenceButton = styled.div`
-  padding: 10px;
-  margin: 5px;
-  border: 1px solid #ccc;
-  background-color: transparent;
-  display: inline-block;
-  cursor: pointer;
-  width: 150px;
-  border-radius: 5px;
 `;
 
 function Card({ card, onCardClick, isEditMode, isSelected, onSelect }) {
@@ -300,10 +292,11 @@ const StyledCard = styled.div`
 const StyledSidebar = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 2rem;
+  justify-content: center;
 `;
 
-const StyledButton = styled.button`
+const StyledButton = styled(Button)`
   padding: 10px;
   border: 1px solid #ccc;
   background-color: transparent;
@@ -312,19 +305,13 @@ const StyledButton = styled.button`
   justify-content: center;
   cursor: pointer;
   border-radius: 5px;
+  width: 50px;
+  height: 50px;
+  font-size: 2rem;
 `;
 
 const StyledCheckbox = styled.input`
   cursor: pointer;
-`;
-
-const ReadSentenceButton = styled.button`
-  padding: 10px;
-  margin: 5px;
-  border: 1px solid #ccc;
-  background-color: transparent;
-  display: inline-block;
-  cursor: pointer;
-  width: 150px;
-  border-radius: 5px;
+  transform: scale(3);
+  margin-bottom: 15px;
 `;
