@@ -177,8 +177,8 @@ function Dashboard() {
 export default Dashboard;
 
 const StyledContainer = styled.div`
-  margin-top: 20px;
-  margin-right: 50px;
+  margin-top: 25px;
+  margin-left: 30px;
   margin-bottom: 20px;
   display: flex;
   flex-direction: column;
@@ -193,7 +193,7 @@ const StyledMainContent = styled.div`
 const StyledDashboardLayout = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 0.8rem;
+  gap: 2rem;
 `;
 
 const EditContainer = styled.section`
@@ -287,6 +287,10 @@ const StyledCard = styled.div`
   background-color: var(--color-brand-50);
   color: var(--color-brand-1000);
   margin: 5px;
+
+  &:hover {
+    background-color: var(--color-brand-200);
+  }
 `;
 
 const StyledSidebar = styled.div`

@@ -11,6 +11,7 @@ import Users from "./pages/Users";
 import Settings from "./pages/Settings";
 import Account from "./pages/Account";
 import AppLayout from "./ui/AppLayout";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   return (

@@ -5,10 +5,13 @@ import styled from "styled-components";
 const CategoryTile = styled.div`
   padding: 10px;
   margin: 5px;
-  border: 1px solid #ccc;
-  background-color: ${(props) => (props.selected ? "#ddd" : "transparent")};
+  background-color: ${(props) => (props.selected ? "#ebc7fe" : "transparent")};
   display: inline-block;
   cursor: pointer;
+
+  border-radius: var(--border-radius-lg);
+  border: 1px solid;
+  border-color: var(--color-brand-500);
 `;
 
 const CategoryList = styled.div`

@@ -95,6 +95,9 @@ const StyledFlashcards = styled.div`
   text-align: center;
   padding: 20px;
   cursor: pointer;
+  &:hover {
+    background-color: var(--color-brand-200);
+  }
 `;
 
 const StyledRow = styled.div`
