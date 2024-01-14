@@ -35,21 +35,6 @@ function LoginForm() {
     }
   };
 
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   axios
-  //     .post("http://127.0.0.1:3000/api/v1/users/login", { email, password })
-  //     .then((result) => {
-  //       console.log(result);
-  //       if (result.data.status === "success") {
-  //         navigate("/dashboard");
-  //         const {token} = result.data.token;
-  //         console.log(token);
-  //       }
-  //     })
-  //     .catch((error) => console.log(error));
-  // };
-
   return (
     <Form onSubmit={handleSubmit}>
       <FormRowVertical label="Email address" onSubmit={handleSubmit}>

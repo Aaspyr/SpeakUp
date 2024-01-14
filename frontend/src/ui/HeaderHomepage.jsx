@@ -22,7 +22,9 @@ function Header() {
           <Link to="/login">
             <Button size="medium">Login</Button>
           </Link>
-          <Button>Sign In</Button>
+          <Link to="/signup">
+            <Button>Sign In</Button>
+          </Link>
         </ButtonRow>
       </Row>
     </StyledHeader>

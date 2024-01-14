@@ -1,5 +1,11 @@
+import SignUpForm from "../features/SignUpForm";
+
 function SignIn() {
-  return <div>SignIn Page</div>;
+  return (
+    <div>
+      <SignUpForm />
+    </div>
+  );
 }
 
 export default SignIn;
